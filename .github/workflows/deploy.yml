@@ -84,7 +84,7 @@ jobs:
 
       # Step to configure AWS credentials and assume the IAM role
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::920373013288:role/GitHunToECRPushRole
           aws-region: eu-north-1
