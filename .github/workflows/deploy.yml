@@ -87,7 +87,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::920373013288:role/GitHubToECRPushRole  # Replace with your IAM role ARN
-          aws-region: Global
+          aws-region: eu-north-1
           role-session-name: GitHubActionsSession
 
       # Build, tag, and push the Docker image to ECR
