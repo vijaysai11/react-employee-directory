@@ -82,6 +82,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Check environment variables
+        run: |
+         echo "AWS_ROLE_ARN = ${{ secrets.AWS_ROLE_ARN }}"
+         echo "AWS_REGION = ${{ secrets.AWS_REGION }}"
+
+      - name: Debug AWS Credentials
+        run: |
+          aws sts get-caller-identity
+
       # Step to configure AWS credentials and assume the IAM role
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
