@@ -205,6 +205,11 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Delete Old 'latest' Tag (if exists)
+        run: |
+          echo "Deleting old 'latest' tag from ECR..."
+          aws ecr batch-delete-image --repository-name ${{ secrets.ECR_REPOSITORY_NAME }} --image-ids imageTag=latest || true
+
       # Build, tag, and push the Docker image to ECR
       - name: Build, Tag, and Push Docker Image
         run: |
