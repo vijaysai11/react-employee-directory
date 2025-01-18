@@ -7,7 +7,12 @@ const EmployeeProfile = () => {
   const employee = mockEmployees.find((emp) => emp.id === parseInt(id));
 
   if (!employee) {
-    return <h2>Employee not found in database</h2>;
+    return (
+      <h2>
+        https://th.bing.com/th/id/OIP.NWf2PzgA833ETeILN9qnmgHaE7?w=251&h=180&c=7&r=0&o=5&pid=1.7not
+        found in database
+      </h2>
+    );
   }
 
   return (
