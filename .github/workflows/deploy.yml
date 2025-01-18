@@ -91,9 +91,6 @@ jobs:
          echo "AWS_ROLE_ARN = ${{ secrets.AWS_ROLE_ARN }}"
          echo "AWS_REGION = ${{ secrets.AWS_REGION }}"
         
-      - name: Print OIDC Token URL
-        run: | 
-          echo "OIDC Token URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
 
       - name: Decode OIDC Token
         run: |
@@ -101,7 +98,9 @@ jobs:
           echo "Decoded Token:"
           echo $OIDC_TOKEN | base64 -d | jq '.'
    
-
+      - name: Print OIDC Token URL
+        run: | 
+          echo "OIDC Token URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
 
       # Step to configure AWS credentials and assume the IAM role
       - name: Configure AWS Credentials
