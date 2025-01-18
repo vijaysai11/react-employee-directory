@@ -240,6 +240,7 @@ jobs:
             # Log in to Amazon ECR (using IAM role credentials on EC2)
             aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.REPOSITORY_URI }}
 
+
             # Pull the latest Docker image from ECR
             docker pull ${{ secrets.REPOSITORY_URI }}:latest
 
