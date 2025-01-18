@@ -92,7 +92,8 @@ jobs:
          echo "AWS_REGION = ${{ secrets.AWS_REGION }}"
         
       - name: Print OIDC Token URL
-        run: echo "OIDC Token URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
+        run: | 
+          echo "OIDC Token URL: $ACTIONS_ID_TOKEN_REQUEST_URL"
 
       - name: Decode OIDC Token
         run: |
