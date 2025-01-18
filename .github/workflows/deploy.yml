@@ -87,10 +87,6 @@ jobs:
          echo "AWS_ROLE_ARN = ${{ secrets.AWS_ROLE_ARN }}"
          echo "AWS_REGION = ${{ secrets.AWS_REGION }}"
 
-      - name: Debug AWS Credentials
-        run: |
-          aws sts get-caller-identity
-
       # Step to configure AWS credentials and assume the IAM role
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -98,6 +94,10 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
           audience: sts.amazonaws.com
+
+      - name: Debug AWS Credentials
+        run: |
+          aws sts get-caller-identity
 
       - name: Log in to Amazon ECR
         id: login-ecr
