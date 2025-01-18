@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import EmployeeDetails from "./EmployeeDetails";
 
 const EmployeeList = ({ employees }) => {
