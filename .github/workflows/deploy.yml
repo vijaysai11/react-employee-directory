@@ -71,7 +71,7 @@ on:
     branches:
       - main  # Trigger on push to the 'main' branch
 
- permissions:
+permissions:
   id-token: write
   contents: read
 
