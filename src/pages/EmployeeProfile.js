@@ -7,7 +7,7 @@ const EmployeeProfile = () => {
   const employee = mockEmployees.find((emp) => emp.id === parseInt(id));
 
   if (!employee) {
-    return <h2>Employee not found</h2>;
+    return <h2>Employee not found in database</h2>;
   }
 
   return (
