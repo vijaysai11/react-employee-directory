@@ -74,7 +74,7 @@ on:
 jobs:
   # Step 1: Build and Push Docker Image
   build:
-  permissions:
+   permissions:
     id-token: write
     contents: read
 
