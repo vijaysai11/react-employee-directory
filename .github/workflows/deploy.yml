@@ -95,8 +95,8 @@ jobs:
         run: |
           echo "Retrieving OIDC Token..."
           export OIDC_TOKEN=$(curl -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" $ACTIONS_ID_TOKEN_REQUEST_URL | jq -r '.id_token')
-          echo $OIDC_TOKEN | base64 -d | jq '.'
-          echo "Decoded OIDC token above."
+          echo "Raw OIDC Token: $OIDC_TOKEN"
+
 
 
       # Step to configure AWS credentials and assume the IAM role
